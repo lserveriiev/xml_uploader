@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<title>All files</title>
+</head>
+<body>
+	<h1 layout:fragment="header">All files</h1>
+	<div layout:fragment="content" class="container">
+		<div class="pull-right">
+			<a href="/uploadFile">Upload file</a>
+		</div>
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<td>File</td>
+					<td>Action</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:if="${files.empty}">
+					<td colspan="3">No files</td>
+				</tr>
+				<tr th:each="file : ${files}">
+					<td th:text="${file}"></td>
+					<td>
+						<a th:href="@{'/files/download/' + ${file}}">Download</a>
+						<a th:href="@{'/files/view/' + ${file}}">View</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<title>View file</title>
+</head>
+<body>
+	<h1 layout:fragment="header">View file</h1>
+	<div layout:fragment="content" class="container">
+		<div class="pull-right">
+			<a href="/">Files</a>
+		</div>
+		<table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <td>Field</td>
+                    <td>Value</td>
+                </tr>
+            </thead>
+			<tbody>
+				<tr>
+					<td><strong>To</strong></td>
+					<td th:text="${xml.getTo()}"></td>
+				</tr>
+				<tr>
+					<td><strong>From</strong></td>
+					<td th:text="${xml.getFrom()}"></td>
+				</tr>
+                <tr>
+                    <td><strong>Heading</strong></td>
+                    <td th:text="${xml.getHeading()}"></td>
+                </tr>
+                <tr>
+                    <td><strong>Body</strong></td>
+                    <td th:text="${xml.getBody()}"></td>
+                </tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

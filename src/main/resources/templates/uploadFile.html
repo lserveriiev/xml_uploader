@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+<head>
+    <title>Upload file</title>
+</head>
+<body>
+
+<h1 layout:fragment="header">Upload file</h1>
+
+<div class="alert danger" th:if="${message}">
+    <strong th:text="${message}"/>
+</div>
+
+<div layout:fragment="content" class="container">
+    <form enctype="multipart/form-data" action="/uploadFile" method="post">
+        <input type="file" name="file" />
+        <div class="form-actions">
+            <input type="submit" value="Upload" />
+        </div>
+    </form>
+</div>
+</body>
+</html>

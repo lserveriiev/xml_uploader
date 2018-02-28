@@ -1,0 +1,6 @@
+spring.application.name: Upload xml files
+spring.thymeleaf.cache: false
+server.port: 8181
+storage:
+    uploadFolder: upload
+    demoFile: demo.xml
